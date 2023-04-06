@@ -1,0 +1,21 @@
+/* SELETORES IMPORTAM. */
+
+/* tag html */
+button {
+  background-color: green;
+}
+
+/* id */
+#nome-turma {
+  color: red;
+}
+
+/* class = .nomeDaClasse */
+.title {
+  color: blue;
+}
+
+/* seletores avançados */
+.title > article > p {
+  background-color: grey;
+}

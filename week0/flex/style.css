@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: green;
+  font-size: small;
+  color: white;
+  padding: 2rem;
+}
+
+.box {
+  border: 2px solid red;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
