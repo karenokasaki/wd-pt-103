@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.green {
+  display: flex;
+  background-color: #00b172;
+  color: white;
+  margin: 2rem;
+}
+
+.image {
+  height: 56vh;
+  padding: 30px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.text > h4 {
+  font-size: 2rem;
+  border-bottom: 4px solid white;
+  width: fit-content;
+}
+
+.text > p {
+  width: 50%;
+}
+
+.position > img {
+  height: 4rem;
+  position: absolute;
+  top: 43%;
+  left: 52%;
+}
+
+.position {
+  position: relative;
+}

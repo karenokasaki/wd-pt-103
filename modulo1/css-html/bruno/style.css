@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.line {
+  border: 5px solid grey;
+}
+
+.visualizar-div {
+  border: 1px solid red;
+}
+
+.bg {
+  background-color: yellow;
+}
+
+.fonte-gigante {
+  font-size: 150px;
+  color: grey;
+}
+
+.cinza {
+  background-color: grey;
+}
+
+.day-forecast {
+  background-color: white;
+  margin: 10px;
+}
+
+.weather-section {
+  background-color: gray;
+}
+
+.weather-article {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+
+div {
+  background-color: gray;
+  padding: 20px;
+  margin: 10px;
+}

@@ -20,8 +20,11 @@ console.log("name->", name);
 const cidade = "Ribas do Rio Pardo";
 // variáveis são caixinhas
 
+let NomeDoBruno = "Bruno Arruda"
+
 //string -> str
 const strings = "uma string";
+
 const string2 = "também é uma string";
 //template strings
 let idade = 30;
