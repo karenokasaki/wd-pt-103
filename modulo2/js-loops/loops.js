@@ -137,7 +137,75 @@ function backwards(string) {
     console.log(string[i]);
   }
 }
-backwards("ironhack");
+//backwards("ironhack");
 
 let hacker1 = "karen";
-console.log(`The driver's name is ${hacker1}`);
+//console.log(`The driver's name is ${hacker1}`);
+
+const longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rhoncus maximus justo. Cras consectetur interdum risus vitae interdum. Integer vitae facilisis turpis. Sed sit amet cursus risus, ac tincidunt tellus. Nunc consequat mi nulla, et laoreet nisi mollis eu. Aenean commodo est non nunc tincidunt rutrum. Mauris dapibus a ante ac bibendum.
+
+Curabitur faucibus, tellus vel ultrices dapibus, arcu neque tempus magna, a fermentum tellus mi sit amet felis. Quisque tincidunt nisi purus, tristique elementum ante aliquam nec. Maecenas pharetra dignissim justo, vel iaculis nibh finibus at. Donec vel eleifend nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer felis leo, interdum nec condimentum non, ultrices a turpis. Vivamus aliquet non augue id faucibus.
+
+Etiam posuere posuere quam, viverra commodo lectus commodo quis. Integer ex ipsum, tincidunt quis lacinia non, vulputate eget neque. Aliquam sit amet convallis elit. Proin dictum nibh ac molestie sollicitudin. Suspendisse in vestibulum massa, blandit pellentesque nisi. Etiam congue tincidunt est, in sagittis libero tristique vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.`;
+
+//                 parametro
+function countWords(text) {
+  const arrayOfWords = text.split(" ");
+
+  return arrayOfWords.length;
+}
+
+console.log(countWords(longText));
+
+function countEt(text) {
+  const arrayOfWords = text.split(" "); // ["lorem", "ipsum", "et", .....]
+
+  let counter = 0;
+
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    //SE o elemento for "et", eu quero que conte + 1 na variável counter
+    if (arrayOfWords[i] === "et") {
+      console.log(arrayOfWords[i]);
+      counter++;
+    }
+  }
+
+  return counter;
+}
+
+console.log(countEt(longText));
+
+// racecar
+// racecar
+
+function checkPalindrome(phrase) {
+  //verificar se a frase é a mesma de trás pra frente.
+
+  //let arrayWords = phrase.split(" ") // ["race", "car"]
+
+  let newPhrase = "";
+
+  for (let i = 0; i < phrase.length; i++) {
+    if (phrase[i] === " ") {
+      continue;
+    }
+
+    newPhrase = newPhrase + phrase[i];
+  }
+
+  let backwords = "";
+
+  for (let i = newPhrase.length - 1; i >= 0; i--) {
+    backwords = backwords + newPhrase[i];
+  }
+
+  console.log(newPhrase, backwords);
+  if (newPhrase === backwords) {
+    console.log("Isso é um palindrome");
+  } else {
+    console.log("Isso não é um palindrome");
+  }
+}
+
+let string = "A man, a plan, a canal, Panama!";
+console.log(checkPalindrome(string));
