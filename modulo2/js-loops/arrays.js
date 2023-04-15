@@ -18,24 +18,37 @@ const cities = ["sp", "bh", "campo grande"];
 //console.log(cities);
 
 //includes() => saber se o elemento existe dentro da array
-console.log(cities.includes("sp"))
+console.log(cities.includes("sp"));
 
 //indexOf => retorna o INDEX do elemento se ele existir dentro da array
 // retorna -1 quando o elemento não existe
-const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
-console.log(beasts.indexOf("ironhack"))
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+console.log(beasts.indexOf("ironhack"));
 // retirar um elemento que está NO MEIO da minha array =>
 //1º achar o index desse elemento
 //2º retirar o elemento com o splice()
-let camelIndex = beasts.indexOf("camel")
+let camelIndex = beasts.indexOf("camel");
 
 //splice() altera a minha array original
 //beasts.splice(camelIndex, 2)
 
-
 //não alterar a array original
 // spread -> [...] -> sempre tem que ser feito DENTRO DE ALGUMA COISA [...] ; {...}
-const cloneBeasts = [...beasts]
-cloneBeasts.splice(camelIndex, 1)
-console.log(cloneBeasts)
+const cloneBeasts = [...beasts];
+cloneBeasts.splice(camelIndex, 1);
+console.log(cloneBeasts);
 
+let empty = [];
+// checar se a array está vazia ou não ->
+if (!empty.length) {
+  console.log("A array está vazia");
+}
+
+// split() => transforma uma STRING em uma ARRAY
+const novoPaiPai = "Bruno Arruda";
+console.log(novoPaiPai.split(" "));
+
+// join() => transforma uma ARRAY em uma STRING
+// tudo o que é colocado DENTRO do join() é o que vai SEPARAR os elementos
+const arrayNames = ["Gabriel", "Rabel", "Da", "Silva"]; // -> "Gabriel Rabel"
+console.log(arrayNames.join("-"));
