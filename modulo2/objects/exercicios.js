@@ -73,7 +73,16 @@ exemplo: [ "Interestelar", "A Origem", "Batman Begins", "O Cavaleiro das Trevas"
 */
 function filmesDepoisDe2020(array) {
   //escreva o código aqui
+  const filmesTop = [];
+
+  array.forEach((filme) => {
+    if (filme.ano >= 2010 && filme.ano <= 2020) {
+      filmesTop.push(filme.titulo);
+    }
+  });
+  return filmesTop;
 }
+console.log(filmesDepoisDe2020(filmes));
 
 /* hard mode
 com base na mesma array de objetos filmes, faça uma função que receberá essa array como argumento
@@ -82,7 +91,22 @@ exemplo: [ {titulo: "Matrix", media: 4.2}, {titulo: "Interestelar", media: 4.8} 
 */
 function mediaRatings(array) {
   //escreva o código aqui
+  let newArray = [];
+
+  //iterar pela array de filmes
+  array.forEach((filme) => {
+    let sum = 0;
+
+    filme.ratings.forEach((rating) => {
+      sum += rating;
+    });
+
+    let media = sum / filme.ratings.length;
+
+    newArray.push({ titulo: filme.titulo, media: media });
+  });
 }
+mediaRatings(filmes);
 
 ////////////////////////////////////////////////////////////////
 
