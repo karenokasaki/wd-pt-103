@@ -15,13 +15,26 @@
 
         <label for="nameInput">Digite seu nome :</label>
         <!-- para capturar o valor de um input -->
-        <input name="nameInput" type="text" id="inputName" />
-
+        <input type="text" id="inputName" />
         <button id="startBtn">VAMOS LÁ!</button>
       </div>
 
       <div id="divBoard" class="hide">
-        <h1>Aqui é o jogo!!! -> Calculadora</h1>
+        <h1>Olá <span id="spanName"></span></h1>
+
+        <div>
+          <input type="number" id="num1" />
+
+          <select id="op">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+          </select>
+
+          <input type="number" id="num2" />
+          <button id="resultButton">=</button> <span id="result"></span>
+        </div>
       </div>
     </main>
 
