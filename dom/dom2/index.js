@@ -12,6 +12,14 @@ const op = document.querySelector("#op");
 const resultButton = document.querySelector("#resultButton");
 const result = document.querySelector("#result");
 
+const divHistory = document.querySelector("#divHistory");
+
+const clearButton = document.querySelector("#clearButton");
+
+const dogButton = document.querySelector("#dogButton");
+
+const totalGeral = document.querySelector("#totalGeral");
+
 //adicionar um eventListener no botão começar.
 startBtn.addEventListener("click", () => {
   //quando o jogador clicar no botão começar
@@ -29,13 +37,51 @@ startBtn.addEventListener("click", () => {
 //fazer a conta ou seja -> num1 num2 e operação matemática
 
 resultButton.addEventListener("click", () => {
-  console.log("Resultado");
-  console.log(op.value);
-
+  //checando qual a operação matematica
   if (op.value === "+") {
     result.innerText = Number(num1.value) + Number(num2.value);
   }
+  if (op.value === "-") {
+    result.innerText = Number(num1.value) - Number(num2.value);
+  }
+  if (op.value === "/") {
+    result.innerText = Number(num1.value) / Number(num2.value);
+  }
+  if (op.value === "*") {
+    result.innerText = Number(num1.value) * Number(num2.value);
+  }
 
-  console.log(num1.value);
-  console.log(num2.value);
+  //adicionar a conta ao histórico
+  const p = document.createElement("p"); //<p></p>
+  p.innerHTML = `${num1.value} ${op.value} ${num2.value} = <span class="subtotal">${result.innerText}</span>`;
+
+  //pai. appendChild -> (filho)
+  divHistory.appendChild(p);
+
+  num1.value = "";
+  num2.value = "";
+
+  setTimeout(() => {
+    result.innerText = "";
+  }, 2000);
+
+  const subtotals = document.querySelectorAll(".subtotal");
+  let sum = 0;
+  subtotals.forEach((subtotal) => {
+    sum += Number(subtotal.innerText);
+  });
+
+  totalGeral.innerText = sum;
+});
+
+clearButton.addEventListener("click", () => {
+  divHistory.innerText = ""; //<div>""</div>
+});
+
+const img = document.querySelector("#img");
+
+dogButton.addEventListener("click", () => {
+  img.setAttribute("src", "./dog.jpg"); // <img src="./dog.jpg" />
+
+  img.setAttribute("name", "cachorro");
 });
