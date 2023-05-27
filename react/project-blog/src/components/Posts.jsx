@@ -17,10 +17,21 @@ export default function Posts(props) {
          </div>
 
          <div className="posts-div">
-            {/* Aqui vai os meus posts -> quero chamar o componente POST */}
-            <Post post={props.info[0]} />
-            <Post post={props.info[1]} />
-            <Post post={props.info[2]} />
+            {/* 
+               Aqui vai os meus posts -> quero chamar o componente POST 
+                  <Post post={props.info[0]} />
+                  <Post post={props.info[1]} />
+                  <Post post={props.info[2]} />
+                  <Post post={props.info[3]} />
+            */}
+
+            {props.info.map((post) => {
+               //Post -> componente 
+               // post={post}
+               return <Post post={post} />;
+            })}
+
+
          </div>
 
          <div>
