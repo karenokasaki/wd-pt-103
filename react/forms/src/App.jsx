@@ -1,5 +1,7 @@
 import TodoList from "./components/TodoList";
 import AddTodo from "./components/AddTodo";
+import Students from "./components/Students";
+
 import { useState } from "react";
 
 import "./App.css";
@@ -14,8 +16,10 @@ function App() {
 
    return (
       <>
-         <AddTodo list={list} setList={setList} />
-         <TodoList list={list} />
+         <Students />
+
+         {/* <AddTodo list={list} setList={setList} />
+         <TodoList list={list} /> */}
       </>
    );
 }

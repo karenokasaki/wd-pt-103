@@ -1,5 +1,8 @@
 
 export default function TodoList(props) {
+
+   /* state estava aqui */
+
    return (
       <div>
          <h1>Todo List</h1>
