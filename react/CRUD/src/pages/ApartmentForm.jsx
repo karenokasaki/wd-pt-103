@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function ApartmentForm() {
    const navigate = useNavigate();
@@ -45,13 +46,15 @@ export default function ApartmentForm() {
             "https://webdev103.cyclic.app/apartamentos",
             form
          );
-         alert("Anuncio criado com sucesso")
+         toast.success("Anuncio criado com sucesso");
          navigate("/");
       } catch (error) {
          //o catch só vai rodar quando algo der errado no try
          console.log(error);
       }
    }
+
+   console.log(form);
 
    return (
       <div>
@@ -64,6 +67,7 @@ export default function ApartmentForm() {
                name="title"
                value={form.title}
                onChange={handleChange}
+               required
                placeholder="Escreva o nome da propriedade"
             />
 
@@ -71,6 +75,7 @@ export default function ApartmentForm() {
             <input
                type="number"
                name="rent"
+               min={0}
                value={form.rent}
                onChange={handleChange}
             />

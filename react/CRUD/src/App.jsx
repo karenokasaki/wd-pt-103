@@ -4,10 +4,12 @@ import HomePage from "./pages/HomePage";
 import ApartmentForm from "./pages/ApartmentForm";
 import Navbar from "./components/Narbar";
 import ApartmentDetail from "./pages/ApartmentDetail";
+import { Toaster } from "react-hot-toast";
 
 function App() {
    return (
       <>
+         <Toaster />
          <Navbar />
 
          <Routes>
