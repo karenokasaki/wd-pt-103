@@ -1,20 +1,17 @@
 const form = {
-   name: "karen",
-   age: 30,
-   city: "Ribas do Rio Pardo",
+   title: "Apartamento aconchegante no centro",
+   rent: "2.000,00",
+   isAvalible: true,
+   image: "https://loremflickr.com/320/240/apartment",
+   description:
+      "Apartamento completamente mobiliado, com ótima localização no centro da cidade.",
+   city: "São Paulo",
+   pool: true,
 };
-
-console.log(form);
 
 const newForm = {
    ...form,
-   name: "Gabriel",
-}; 
+   title: "oq a pessoa esta  digitando",
+};
 
-function handleChange(e) {
-   setForm({...form, [e.target.name] : e.target.value})
-} 
-<input name="name" value={form.name} />
-<input name="age" value={form.age}/>
-<input name="city" value={form.city} />
 console.log(newForm);
