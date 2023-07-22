@@ -28,6 +28,20 @@ router.get("/all", async (req, res) => {
    return res.status(200).json(allUsers);
 });
 
+// localhost:4000/user/64bc28388fa923a4051a31d4
+router.get("/:id_user", async (req, res) => {
+   try {
+      const id_user = req.params.id_user;
+
+      const one_user = await UserModel.findById(id_user).populate("recipes")
+
+      return res.status(200).json(one_user)
+   } catch (error) {
+      console.log(error);
+      return res.status(500).json(error);
+   }
+});
+
 //editar UM usuário apenas pelo ID
 //localhost:4000/user/edit/33271987612931dugsa
 router.put("/edit/:id", async (req, res) => {

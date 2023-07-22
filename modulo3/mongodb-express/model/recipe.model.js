@@ -27,10 +27,11 @@ const recipeSchema = new Schema(
          default: "https://images.media-allrecipes.com/images/75131.jpg",
       },
       duration: { type: Number, min: 0 },
-      creator: { type: String },
+      creator: { type: Schema.Types.ObjectId, ref: "User" },
       created: { type: Date, default: Date.now },
    },
    { timestamps: true }
 );
 
 export default model("Recipe", recipeSchema);
+// creator : dausahsha90

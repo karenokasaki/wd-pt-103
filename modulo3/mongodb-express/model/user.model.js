@@ -40,6 +40,8 @@ const userSchema = new mongoose.Schema(
          min: 16,
          max: 110,
       },
+
+      recipes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Recipe" }],
    },
    {
       //options
@@ -49,3 +51,5 @@ const userSchema = new mongoose.Schema(
 
 //O model é o objeto onde vamos fazer as interações com o banco de dados
 export default mongoose.model("User", userSchema);
+
+//ale id: dausahsha90
