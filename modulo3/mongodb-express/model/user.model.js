@@ -41,7 +41,9 @@ const userSchema = new mongoose.Schema(
          max: 110,
       },
 
-      recipes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Recipe" }],
+      recipes: [ { type: mongoose.Schema.Types.ObjectId, ref: "Recipe" }],
+
+      notes: [ {type: mongoose.Schema.Types.ObjectId, ref: "Note"} ]
    },
    {
       //options

@@ -4,6 +4,7 @@ import cors from "cors";
 import connectDB from "./config/db.config.js";
 import userRoute from "./routes/user.routes.js";
 import recipeRoute from "./routes/recipe.routes.js";
+import noteRoute from "./routes/note.routes.js";
 
 //instanciar o express
 const app = express();
@@ -23,6 +24,7 @@ connectDB();
 //base url -> http://localhost:4000/user
 app.use("/user", userRoute);
 app.use("/recipe", recipeRoute);
+app.use("/note", noteRoute);
 
 //SEMPRE PRECISA FICAR NO FINAL DO SEU ARQUIVO
 app.listen(4000, () => {

@@ -8,7 +8,7 @@ const recipeSchema = new Schema(
          type: String,
          enum: ["Easy Peasy", "Amateur Chef", "UltraPro Chef"],
       },
-      ingredients: [{ type: String }],
+      ingredients: [ { type: String } ], // [ "alho", "sal", "batata" ]
       cuisine: { type: String, required: true },
       dishType: {
          type: String,
@@ -27,8 +27,9 @@ const recipeSchema = new Schema(
          default: "https://images.media-allrecipes.com/images/75131.jpg",
       },
       duration: { type: Number, min: 0 },
-      creator: { type: Schema.Types.ObjectId, ref: "User" },
       created: { type: Date, default: Date.now },
+
+      creator: { type: Schema.Types.ObjectId, ref: "User" },
    },
    { timestamps: true }
 );

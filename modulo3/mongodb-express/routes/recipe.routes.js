@@ -21,7 +21,9 @@ recipeRoute.get("/all", async (req, res) => {
 recipeRoute.get("/get-recipe/:id", async (req, res) => {
    try {
       const id_recipe = req.params.id;
-      const recipe = await RecipeModel.findById(id_recipe);
+
+      const recipe = await RecipeModel.findById(id_recipe).populate("creator");
+
       return res.status(200).json(recipe);
    } catch (error) {
       console.log(error);
@@ -31,8 +33,10 @@ recipeRoute.get("/get-recipe/:id", async (req, res) => {
 
 recipeRoute.post("/create-recipe/:id_user", async (req, res) => {
    try {
+      //pegar o id do usuário que está criando a receita
       const id_user = req.params.id_user;
 
+      //pegar os dados da receita
       const recipe = req.body;
 
       //criar uma nova receita
@@ -171,7 +175,7 @@ recipeRoute.get("/get/dessert", async (req, res) => {
       // 0 -> não vem esse campo
       const dessertRecipes = await RecipeModel.find({
          dishType: "dessert",
-      }).select({ title: 1, ingredients: 1, duration: 1, _id: 0 });
+      }).select({ title: 1, duration: 1, _id: 0 });
 
       return res.status(200).json(dessertRecipes);
    } catch (error) {
